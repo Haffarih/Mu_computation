@@ -37,15 +37,8 @@ P_source_eff = P_source_th * 1 / (float(100)) #QQQ (cf wikipedia https://en.wiki
 print("P_source_th =", P_source_th, "W")
 print("P_source_eff =", P_source_eff, "W")
 
-### alternative approach (requires K!)
-#http://www.imre.ucl.ac.be/rpr/RDGN3120/faisceauRX.pdf
-K = 1
-Z = 74 #(Tungsten) http://www.hamamatsu.com/resources/pdf/etd/L12161-07_TXPR1023E.pdf
-# P_source_eff_K = K*P_source_th*Z*V_source #QQQ (cf imre)
-# print("P_source_eff_K=1 =", P_source_eff_K, "W")
-###
 
-### ==== test the csv file if empty  ==== ###
+### ==== test if the "NIST_list.csv" file is empty otherwise fill it with xraylib.GetCompoundDataNISTList ==== ###
 chemical_products = []
 list_c = []
 list_symbols = []
@@ -69,16 +62,18 @@ except pd.errors.EmptyDataError:
         chemical_products.append((name,chemical_formula,density))
     chemical_products = pd.DataFrame.from_records(list_symbols + chemical_products, columns = ['product','chemical_formula', 'density'])
     chemical_products.to_csv('NIST_list.csv', index=False)
-### ============================================
+### ========================================================================================================== ####
 
 condition = True
 simulation_type = input('compute absorption coefficient (µ) (1) or intensity ratio (I/I0) (2): ')
 
+### Simulation 1 => MU COMPUTATION
 if simulation_type == '1':
     simulation_type = '\"absorption coefficient (µ)\"'
     print('Computing µ (mu)')
     mu_computation(figsize = np.array([29,21]), x_y_fontsize = 22, range_interest=True)
 
+### Simulation 2 => I/I0 COMPUTATION
 elif simulation_type == '2':
     simulation_type = '\"intensity ratio (I/I0)\"'
     print('Computing intensity ratio (I/I0)')
@@ -94,6 +89,5 @@ else:
         elif simulation_type == '2':
             condition = False
             intensity_ratio()
-
 
 print('-----------computation of ' + simulation_type + ' finished')
