@@ -6,8 +6,7 @@ Moldule containing the different functions used for µ and I/I0 computation.
 This corresponds to the main code for calculating both µ and I/I0 in which "Mu_functions" module is imported.
 When lauching the code, an interactive insertion will take place.
 
-References:
-A. Brunetti, M. Sanchez del Rio, B. Golosio, A. Simionovici and A. Somogyi, Spectrochim. Acta Part B., 59, 1725-1731 (2004)
+Reference:
 T. Schoonjans et al. "The xraylib library for X-ray-matter interactions. Recent developments" Spectrochimica Acta Part B: Atomic Spectroscopy 66 (2011), pp. 776-784
 
 
