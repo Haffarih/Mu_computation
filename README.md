@@ -9,4 +9,5 @@ When lauching the code, an interactive insertion will take place.
 Reference:
 T. Schoonjans et al. "The xraylib library for X-ray-matter interactions. Recent developments" Spectrochimica Acta Part B: Atomic Spectroscopy 66 (2011), pp. 776-784
 
+![Alt text](./mnt/c/Users/Haffa/Desktop/Python_codes/Git_course/new_mu_computation/Mu_computation_newest/Mu_computation/Fig_mu.png?raw=true "Title")
 ![plot](./mnt/c/Users/Haffa/Desktop/Python_codes/Git_course/new_mu_computation/Mu_computation_newest/Mu_computation/Fig_mu.png)
